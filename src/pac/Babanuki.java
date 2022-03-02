@@ -9,7 +9,7 @@ import java.util.Random;
 
 public class Babanuki {
 	/************************************************************************
-	 * ƒƒCƒ“ƒvƒƒOƒ‰ƒ€
+	 * ãƒ¡ã‚¤ãƒ³ãƒ—ãƒ­ã‚°ãƒ©ãƒ 
 	 ************************************************************************/
 	public static void main(String[] args) throws IOException {
 		seiri s = new seiri();
@@ -21,24 +21,24 @@ public class Babanuki {
 		String[][] player_card;
 		int totalplayer = 0;
 		
-		System.out.println("\n````````````ƒoƒo”²‚«ƒvƒƒOƒ‰ƒ€````````````\n");
-		String print1 = "ƒvƒŒƒCƒ„[l”‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢>>>";
+		System.out.println("\nï½ï½ï½ï½ï½ï½ï½ï½ï½ï½ï½ï½ãƒãƒæŠœããƒ—ãƒ­ã‚°ãƒ©ãƒ ï½ï½ï½ï½ï½ï½ï½ï½ï½ï½ï½ï½\n");
+		String print1 = "ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼äººæ•°ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„>>>";
 		do {
 			totalplayer = Enter_number.main(print1);
 			if(totalplayer == 1) {
-				System.out.println("1l‚Åƒoƒo”²‚«‚·‚é‚ÌHiœàÎj‚¨‘O‚³‚İ‚µ‚¢“z‚â‚ÈišoÎj");
+				System.out.println("1äººã§ãƒãƒæŠœãã™ã‚‹ã®ï¼Ÿï¼ˆæ†«ç¬‘ï¼‰ãŠå‰ã•ã¿ã—ã„å¥´ã‚„ãªï¼ˆå—¤ç¬‘ï¼‰");
 			}
 		}while(totalplayer<2);
 				
-		//ƒJ[ƒh”z•z
-		System.out.println("\nƒJ[ƒh‚ğ”z•z‚µ‚Ü‚·");
+		//ã‚«ãƒ¼ãƒ‰é…å¸ƒ
+		System.out.println("\nã‚«ãƒ¼ãƒ‰ã‚’é…å¸ƒã—ã¾ã™");
 		make_card mc = new make_card(totalplayer);
 		player_card = mc.player_card;
 		player_nokori_card = mc.player_nokori_card;
 		on_display.method(player_card, player_nokori_card, 0);
 		
-		//ƒJ[ƒh®—
-		System.out.println("\n®—‚µ‚½ƒJ[ƒh");
+		//ã‚«ãƒ¼ãƒ‰æ•´ç†
+		System.out.println("\næ•´ç†ã—ãŸã‚«ãƒ¼ãƒ‰");
 		for(int a = 0;a < totalplayer;a++) {
 			seiri seiri = s.method(totalplayer, player_card, player_nokori_card, a);
 			player_card = seiri.player_c;
@@ -46,16 +46,16 @@ public class Babanuki {
 		}
 		on_display.method(player_card,player_nokori_card,0);
 		
-		//ƒJ[ƒh‚ğŠ‚µ‚Ä‚¢‚éƒvƒŒƒCƒ„[‚Ì•\¦
+		//ã‚«ãƒ¼ãƒ‰ã‚’æ‰€æŒã—ã¦ã„ã‚‹ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®è¡¨ç¤º
 		int[] syoji_player = new int[totalplayer];
 		for(int i = 0;i < syoji_player.length;i++) {
-			syoji_player[i] = i;	//ƒQ[ƒ€‚©‚ç”²‚¯‚½ƒvƒŒƒCƒ„[‚Ì—v‘f‚É‚Í-1‚ğ“ü‚ê‚é
+			syoji_player[i] = i;	//ã‚²ãƒ¼ãƒ ã‹ã‚‰æŠœã‘ãŸãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®è¦ç´ ã«ã¯-1ã‚’å…¥ã‚Œã‚‹
 		}
 		
-		//Z”²‚¯‚ğ‹L˜^‚·‚é”z—ñ
+		//ã€‡æŠœã‘ã‚’è¨˜éŒ²ã™ã‚‹é…åˆ—
 		int[] array_rank = new int[totalplayer];
 		for(int i= 0;i<array_rank.length;i++) {
-			array_rank[i] = -1;		//‰Šú’l‚Í-1
+			array_rank[i] = -1;		//åˆæœŸå€¤ã¯-1
 		}
 		int rank = 0;
 		for(int i = 0;i < totalplayer;i++) {
@@ -65,77 +65,77 @@ public class Babanuki {
 			rank = ranking.rank;
 		}
 		
-		//ƒJ[ƒh‚ğæ‚éƒvƒŒƒCƒ„[‚Ææ‚ç‚ê‚éƒvƒŒƒCƒ„[‚ÌŒˆ’è
-		take_taken take_taken = t.method(syoji_player, 0);	//Å‰‚Ítake‚É0‚ğ“ü‚ê‚é
+		//ã‚«ãƒ¼ãƒ‰ã‚’å–ã‚‹ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã¨å–ã‚‰ã‚Œã‚‹ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®æ±ºå®š
+		take_taken take_taken = t.method(syoji_player, 0);	//æœ€åˆã¯takeã«0ã‚’å…¥ã‚Œã‚‹
 		int take = take_taken.take;
 		int taken = take_taken.taken;
 		
-		//ƒQ[ƒ€‚ğ‚·‚é
-		System.out.println("\n-----------------------ƒQ[ƒ€ŠJnI-----------------------");
+		//ã‚²ãƒ¼ãƒ ã‚’ã™ã‚‹
+		System.out.println("\n-----------------------ã‚²ãƒ¼ãƒ é–‹å§‹ï¼-----------------------");
 		game game = g.method(totalplayer,player_card, player_nokori_card,syoji_player, array_rank, rank, take, taken);
 		array_rank = game.array_rank;
 		rank = game.rank;
 		
-		//Œ‹‰Ê”­•\
+		//çµæœç™ºè¡¨
 		result(array_rank, rank);
 	}
 	/******************************************************************************
-	 * Œ‹‰Ê‚ğ•\¦‚·‚éƒvƒƒOƒ‰ƒ€
+	 * çµæœã‚’è¡¨ç¤ºã™ã‚‹ãƒ—ãƒ­ã‚°ãƒ©ãƒ 
 	 ******************************************************************************/
 	public static void result(int[] array_rank,int rank) {
-		System.out.println("------------------------Œ‹‰Ê”­•\------------------------");
+		System.out.println("------------------------çµæœç™ºè¡¨------------------------");
 		for(int i = 0;i < array_rank.length-1;i++) {
-			System.out.println((i+1)+"”²‚¯‚Í player"+(array_rank[i]+1));
+			System.out.println((i+1)+"æŠœã‘ã¯ player"+(array_rank[i]+1));
 		}
-		System.out.println("\nƒoƒo‚Í player"+(array_rank[rank]+1));
-		System.out.println("-----------------------‚Ü‚½—V‚ñ‚Å‚Ë-----------------------");
+		System.out.println("\nãƒãƒã¯ player"+(array_rank[rank]+1));
+		System.out.println("-----------------------ã¾ãŸéŠã‚“ã§ã­-----------------------");
 	}
 }
-class on_display{
-	/***************************************************************************
-	 * w’è‚µ‚½ƒvƒŒƒCƒ„[‚ÌƒJ[ƒh‚ğ•\¦‚·‚éƒvƒƒOƒ‰ƒ€
-	 * 
-	 * wƒpƒ‰ƒ[ƒ^[‚ÌÅŒã‚É‚ÍA•\¦‚µ‚½‚¢ƒvƒŒƒCƒ„[‚Ì”Ô†-1 or ‘Sˆõ•\¦‚Í-10‚ğ“ü—Íx
-	 ***************************************************************************/
+/***************************************************************************
+ * æŒ‡å®šã—ãŸãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰ã‚’è¡¨ç¤ºã™ã‚‹ãƒ—ãƒ­ã‚°ãƒ©ãƒ 
+ * 
+ * ã€ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãƒ¼ã®æœ€å¾Œã«ã¯ã€è¡¨ç¤ºã—ãŸã„ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ç•ªå·-1 or å…¨å“¡è¡¨ç¤ºã¯-10ã‚’å…¥åŠ›ã€
+ ***************************************************************************/
+class on_display{	
 	public static void method(String[][] player_card,int[] player_nokori_card,int num) {
 		if(num == -10) {
 			for(int i = 0;i < player_card.length;i++) {
-				System.out.print("player "+ (i + 1) + "‚ÌƒJ[ƒh\tw");
+				System.out.print("player "+ (i + 1) + "ã®ã‚«ãƒ¼ãƒ‰\tã€");
 				for(int j = 0;j < player_nokori_card[i];j++) {
 					if((j + 1) ==  player_nokori_card[i]){
-						System.out.println(player_card[i][j] + "x\t");
+						System.out.println(player_card[i][j] + "ã€\t");
 					}else{
 						System.out.print(player_card[i][j]+",");
 					}
 				}
-				System.out.print("c‚è@¨@s" + player_nokori_card[i] + "–‡t\n");
+				System.out.print("æ®‹ã‚Šã€€â†’ã€€ã€Š" + player_nokori_card[i] + "æšã€‹\n");
 			}
 		}else {
 			if(player_nokori_card[num] == 0) {
-				System.out.print("player"+ (num + 1) + "‚ÌƒJ[ƒh‚Ì");
+				System.out.print("player"+ (num + 1) + "ã®ã‚«ãƒ¼ãƒ‰ã®");
 			}else {
-				System.out.print("player"+ (num + 1) + "‚ÌƒJ[ƒh\tw");
+				System.out.print("player"+ (num + 1) + "ã®ã‚«ãƒ¼ãƒ‰\tã€");
 			}
 			for(int j = 0;j < player_nokori_card[num];j++) {
 				if((j + 1) ==  player_nokori_card[num]){
-					System.out.println(player_card[num][j] + "x\t");
+					System.out.println(player_card[num][j] + "ã€\t");
 				}else{
 					System.out.print(player_card[num][j]+",");
 				}
 			}
-			System.out.print("c‚è–‡”¨@s" + player_nokori_card[num] +"–‡t\n");
+			System.out.print("æ®‹ã‚Šæšæ•°â†’ã€€ã€Š" + player_nokori_card[num] +"æšã€‹\n");
 		}
 	}
 }
 /*****************************************************************************
- * ƒJ[ƒh‚ğì¬‚·‚éƒvƒƒOƒ‰ƒ€
+ * ã‚«ãƒ¼ãƒ‰ã‚’ä½œæˆã™ã‚‹ãƒ—ãƒ­ã‚°ãƒ©ãƒ 
  *****************************************************************************/
 class make_card{
 	int[] player_nokori_card;
 	String[][] player_card;
 	public make_card(int totalplayer) {
 		String[] card = {"Joker",																							//Joker
-				"Clu01","Clu02","Clu03","Clu04","Clu05","Clu06","Clu07","Clu08","Clu09","Clu10","Clu11","Clu12","Clu13",	//Clubs@@@
+				"Clu01","Clu02","Clu03","Clu04","Clu05","Clu06","Clu07","Clu08","Clu09","Clu10","Clu11","Clu12","Clu13",	//Clubsã€€ã€€ã€€
 				"Dia01","Dia02","Dia03","Dia04","Dia05","Dia06","Dia07","Dia08","Dia09","Dia10","Dia11","Dia12","Dia13",	//Diamonds
 				"Hea01","Hea02","Hea03","Hea04","Hea05","Hea06","Hea07","Hea08","Hea09","Hea10","Hea11","Hea12","Hea13",	//Heart
 				"Spa01","Spa02","Spa03","Spa04","Spa05","Spa06","Spa07","Spa08","Spa09","Spa10","Spa11","Spa12","Spa13",	//Spade
@@ -159,13 +159,13 @@ class make_card{
 			}
 		}
 		this.player_card = new String[totalplayer][53/totalplayer+3];
-		//‘S‚Ä‚Ì—v‘f‚É‰Šú’luXXXnov‚ğ“ü‚ê‚é
+		//å…¨ã¦ã®è¦ç´ ã«åˆæœŸå€¤ã€ŒXXXnoã€ã‚’å…¥ã‚Œã‚‹
 		for(int i = 0;i < player_card.length;i++) {
 			for(int j = 0;j < player_card[i].length;j++) {
 				this.player_card[i][j] = "XXXno";
 			}
 		}
-		//Še—v‘f‚ÉƒJ[ƒh‚ğ“ü‚ê‚é
+		//å„è¦ç´ ã«ã‚«ãƒ¼ãƒ‰ã‚’å…¥ã‚Œã‚‹
 		int cardfn = 0;
 		for(int i = 0;i < player_card.length;i++) {
 			for(int j = 0;j < player_nokori_card[i];j++) {
@@ -176,25 +176,25 @@ class make_card{
 	}
 }
 /******************************************************************************
- * ƒJ[ƒh‚ğ®—‚·‚éƒvƒƒOƒ‰ƒ€
+ * ã‚«ãƒ¼ãƒ‰ã‚’æ•´ç†ã™ã‚‹ãƒ—ãƒ­ã‚°ãƒ©ãƒ 
  ******************************************************************************/
 class seiri{
 	int[] player_n_c;
 	String[][] player_c;
 	/*********************************************************************************
-	 * “¯‚¶”š‚ÌƒJ[ƒh‚ğÁ‹‚·‚éƒvƒƒOƒ‰ƒ€
+	 * åŒã˜æ•°å­—ã®ã‚«ãƒ¼ãƒ‰ã‚’æ¶ˆå»ã™ã‚‹ãƒ—ãƒ­ã‚°ãƒ©ãƒ 
 	 *********************************************************************************/
 	public seiri method(int totalplayer,String[][] player_num_card, int[] player_num_nokori_card, int num) {
 		seiri output = new seiri();
 		
-		//“ñŸŒ³”z—ñ‚©‚çˆêŸŒ³”z—ñ‚É‚·‚é
+		//äºŒæ¬¡å…ƒé…åˆ—ã‹ã‚‰ä¸€æ¬¡å…ƒé…åˆ—ã«ã™ã‚‹
 		String[] compare = new String[player_num_card[num].length];
 		String[] replace = new String[compare.length];
-		//ƒJ[ƒh‚Ì”š‚¾‚¯‚ğc‚·
+		//ã‚«ãƒ¼ãƒ‰ã®æ•°å­—ã ã‘ã‚’æ®‹ã™
 		for(int i = 0;i < compare.length;i++) {
 			compare[i] = player_num_card[num][i].substring(3,5);
 		}
-		//“¯‚¶”š‚ÌƒJ[ƒh‚ğŒ©‚Â‚¯‚ÄÁ‹‚·‚é
+		//åŒã˜æ•°å­—ã®ã‚«ãƒ¼ãƒ‰ã‚’è¦‹ã¤ã‘ã¦æ¶ˆå»ã™ã‚‹
 		for(int i = 0;i < compare.length-1;i++) {
 			int j = i + 1;
 			for(;j < compare.length;j++) {
@@ -204,7 +204,7 @@ class seiri{
 				}
 			}
 		}
-		//ƒJ[ƒh‚Éƒ}[ƒN‚ğ•t‚¯–ß‚·
+		//ã‚«ãƒ¼ãƒ‰ã«ãƒãƒ¼ã‚¯ã‚’ä»˜ã‘æˆ»ã™
 		for(int i = 0;i < compare.length;i++) {
 			if(compare[i].equals("no")) {
 				replace[i] = "XXXno";
@@ -212,11 +212,11 @@ class seiri{
 				replace[i] = player_num_card[num][i].substring(0,3)+compare[i];
 			}
 		}
-		//”z—ñplayer_num_card‚Ì‘S‚Ä‚Ì—v‘f‚ÉuXXXnov‚ğ“ü‚ê‚é
+		//é…åˆ—player_num_cardã®å…¨ã¦ã®è¦ç´ ã«ã€ŒXXXnoã€ã‚’å…¥ã‚Œã‚‹
 		for(int i = 0;i < player_num_card[num].length;i++) {
 			player_num_card[num][i] = "XXXno";
 		}
-		//”z—ñreplace‚Ì—v‘f‚ÉuXXXnov‚ª“ü‚Á‚Ä‚¢‚é—v‘f‚ğ“ü‚ê‚È‚¢
+		//é…åˆ—replaceã®è¦ç´ ã«ã€ŒXXXnoã€ãŒå…¥ã£ã¦ã„ã‚‹è¦ç´ ã‚’å…¥ã‚Œãªã„
 		int idx0 = 0;
 		for(int idx1 = 0;idx1 < player_num_card[num].length;idx1++) {
 			if(!(replace[idx1].equals("XXXno"))) {
@@ -230,18 +230,18 @@ class seiri{
 		return output;
 	}
 }
+/**************************************************************************
+ * ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ãŒã‚²ãƒ¼ãƒ ã‹ã‚‰æŠœã‘ãŸã‹ã‚’åˆ¤å®šã™ã‚‹ãƒ—ãƒ­ã‚°ãƒ©ãƒ 
+ * ã€numã¯ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ç•ªå·ã‚’å…¥åŠ›ã€
+ **************************************************************************/
 class ranking{
 	int[] syoji_player;
 	int[] array_rank;
 	int rank;
-	/**************************************************************************
-	 * ƒvƒŒƒCƒ„[‚ªƒQ[ƒ€‚©‚ç”²‚¯‚½‚©‚ğ”»’è‚·‚éƒvƒƒOƒ‰ƒ€
-	 * wnum‚ÍƒvƒŒƒCƒ„[”Ô†‚ğ“ü—Íx
-	 **************************************************************************/
 	public ranking method(int[] player_nokori_card, int num,int[] syoji_player,  int[] array_rank, int rank) {
 		ranking output = new ranking();
 		if(player_nokori_card[num] == 0) {
-			System.out.println("¤£¤£¤£¤ ƒvƒŒƒCƒ„["+(num+1)+"‚ª”²‚¯‚Ü‚µ‚½!! ¤£¤£¤£¤");
+			System.out.println("â–½â–²â–½â–²â–½â–²â–½ ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼"+(num+1)+"ãŒæŠœã‘ã¾ã—ãŸ!! â–½â–²â–½â–²â–½â–²â–½");
 			syoji_player[num] = -1;
 			array_rank[rank] = num;
 			rank++;
@@ -252,22 +252,22 @@ class ranking{
 		return output;
 	}
 }
+/***************************************************************************
+ * ã‚«ãƒ¼ãƒ‰ã‚’å–ã‚‹ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã¨å–ã‚‰ã‚Œã‚‹ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã‚’æ±ºã‚ã‚‹ãƒ—ãƒ­ã‚°ãƒ©ãƒ 
+ ***************************************************************************/
 class take_taken{
 	int take = 0;
 	int taken = 0;
-	/***************************************************************************
-	 * ƒJ[ƒh‚ğæ‚éƒvƒŒƒCƒ„[‚Ææ‚ç‚ê‚éƒvƒŒƒCƒ„[‚ğŒˆ‚ß‚éƒvƒƒOƒ‰ƒ€
-	 ***************************************************************************/
 	public take_taken method(int[] syoji_player,int take) {
 		take_taken output = new take_taken();
 		
 		String redo ="redo";
 		do {
-			if(syoji_player[take] != -1) {				//ƒvƒŒƒCƒ„[‚ª‘¶İ‚·‚é‚Æ‚«
+			if(syoji_player[take] != -1) {				//ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ãŒå­˜åœ¨ã™ã‚‹ã¨ã
 				redo = null;
-			}else if(take == syoji_player.length-1) {	//ƒvƒŒƒCƒ„[‚ª‘¶İ‚¹‚¸ƒvƒŒƒCƒ„[”Ô†‚ªÅŒã‚Ì‚Æ‚«
+			}else if(take == syoji_player.length-1) {	//ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ãŒå­˜åœ¨ã›ãšãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ç•ªå·ãŒæœ€å¾Œã®ã¨ã
 				take = 0;
-			}else {										//ƒvƒŒƒCƒ„[‚ª‘¶İ‚µ‚È‚¢‚Æ‚«
+			}else {										//ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ãŒå­˜åœ¨ã—ãªã„ã¨ã
 				take++;
 			}
 		}while(redo == "redo");
@@ -278,11 +278,11 @@ class take_taken{
 			if(taken >= syoji_player.length) {
 				taken = 0;
 			}
-			if(syoji_player[taken] != -1) {				//ƒvƒŒƒCƒ„[‚ª‘¶İ‚·‚é‚Æ‚«
+			if(syoji_player[taken] != -1) {				//ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ãŒå­˜åœ¨ã™ã‚‹ã¨ã
 				redo = null;
-			}else if(taken == syoji_player.length-1) {	//ƒvƒŒƒCƒ„[‚ª‘¶İ‚¹‚¸ƒvƒŒƒCƒ„[”Ô†‚ªÅŒã‚Ì‚Æ‚«
+			}else if(taken == syoji_player.length-1) {	//ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ãŒå­˜åœ¨ã›ãšãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ç•ªå·ãŒæœ€å¾Œã®ã¨ã
 				taken = 0;
-			}else {										//ƒvƒŒƒCƒ„[‚ª‘¶İ‚µ‚È‚¢‚Æ‚«
+			}else {										//ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ãŒå­˜åœ¨ã—ãªã„ã¨ã
 				taken++;
 			}
 		}while(redo == "redo");
@@ -292,12 +292,12 @@ class take_taken{
 		return output;
 	}
 }
+/******************************************************************************
+ * ã‚²ãƒ¼ãƒ ã‚’ã™ã‚‹ãƒ—ãƒ­ã‚°ãƒ©ãƒ 
+ ******************************************************************************/
 class game{
 	int[] array_rank;
 	int rank;
-	/******************************************************************************
-	 * ƒQ[ƒ€‚ğ‚·‚éƒvƒƒOƒ‰ƒ€
-	 ******************************************************************************/
 	public game method(int totalplayer,String[][]player_card,int[] player_nokori_card,int[] syoji_player,int[] array_rank,int rank,int take,int taken) throws IOException {
 		seiri s = new seiri();
 		ranking r = new ranking();
@@ -307,33 +307,33 @@ class game{
 		
 		int[] array_take_card = {0,1,2,3,4,5,6,7,8,9,10};
 		int take_number = 0;
-		int mae = 0;	int ato = 0;			//ƒJ[ƒh‚ğˆø‚¢‚½ƒvƒŒƒCƒ„[‚Ìc‚èèD‚ªŒ¸‚Á‚½‚©‚ğŒ©‚é
+		int mae = 0;	int ato = 0;			//ã‚«ãƒ¼ãƒ‰ã‚’å¼•ã„ãŸãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®æ®‹ã‚Šæ‰‹æœ­ãŒæ¸›ã£ãŸã‹ã‚’è¦‹ã‚‹
 		int count = 1;
 		do {
-			//System.out.println("ƒJƒEƒ“ƒg@k"+count+"l");
+			//System.out.println("ã‚«ã‚¦ãƒ³ãƒˆã€€ã€”"+count+"ã€•");
 			mae = player_nokori_card[take];
-			//take‚ªtaken‚ÌƒJ[ƒh‚ğˆø‚­
+			//takeãŒtakenã®ã‚«ãƒ¼ãƒ‰ã‚’å¼•ã
 			if(take == 0) {
 				on_display.method(player_card,player_nokori_card,take);
-				//‘¼‚ÌƒvƒŒƒCƒ„[‚ÌƒJ[ƒh”
+				//ä»–ã®ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚«ãƒ¼ãƒ‰æ•°
 				for(int i = 1;i < player_nokori_card.length;i++) {
-					System.out.println("player"+(i+1)+"‚Ìc‚èƒJ[ƒh”s"+player_nokori_card[i]+"–‡t ");
+					System.out.println("player"+(i+1)+"ã®æ®‹ã‚Šã‚«ãƒ¼ãƒ‰æ•°ã€Š"+player_nokori_card[i]+"æšã€‹ ");
 				}	
-				String print = ("player"+(taken+1)+"‚©‚çƒJ[ƒh‚ğˆø‚­B\ns1`"+player_nokori_card[taken]+"t@‚Ì’†‚©‚ç”š‚ğ‘I‚ÔB>>>");
+				String print = ("player"+(taken+1)+"ã‹ã‚‰ã‚«ãƒ¼ãƒ‰ã‚’å¼•ãã€‚\nã€Š1ï½"+player_nokori_card[taken]+"ã€‹ã€€ã®ä¸­ã‹ã‚‰æ•°å­—ã‚’é¸ã¶ã€‚>>>");
 				do {
 					take_number = Enter_number.main(print)-1;
 				}while(take_number >= player_nokori_card[taken] || take_number < 0);
-				System.out.println("ˆø‚¢‚½ƒJ[ƒh‚Í@w"+player_card[taken][take_number]+"x");
+				System.out.println("å¼•ã„ãŸã‚«ãƒ¼ãƒ‰ã¯ã€€ã€"+player_card[taken][take_number]+"ã€");
 			}else {
 				do {
 					Random r1 = new Random();
 					int ran = array_take_card[r1.nextInt(player_nokori_card[taken])];
 					take_number = ran;
 				}while(take_number >= player_nokori_card[taken] || take_number < 0);
-				System.out.println("ƒvƒŒƒCƒ„["+(take+1)+"‚ªAƒvƒŒƒCƒ„["+(taken+1)+"‚©‚çƒJ[ƒh‚ğˆø‚«‚Ü‚µ‚½B");
+				System.out.println("ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼"+(take+1)+"ãŒã€ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼"+(taken+1)+"ã‹ã‚‰ã‚«ãƒ¼ãƒ‰ã‚’å¼•ãã¾ã—ãŸã€‚");
 			}
 			
-			//take‚ÉƒJ[ƒh‚ğ’Ç‰Á‚·‚é
+			//takeã«ã‚«ãƒ¼ãƒ‰ã‚’è¿½åŠ ã™ã‚‹
 			player_card[take][player_nokori_card[take]] = player_card[taken][take_number];
 			player_nokori_card[take]++;
 			seiri seiri = s.method(totalplayer, player_card, player_nokori_card, take);
@@ -342,49 +342,49 @@ class game{
 			
 			ato = player_nokori_card[take];
 			
-			//ƒvƒŒƒCƒ„[‚ªtaken‚Ìê‡
+			//ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ãŒtakenã®å ´åˆ
 			if(taken == 0) {
-				System.out.println("player"+(take+1)+"‚ªplayer1‚ÌƒJ[ƒh‚©‚çw"+player_card[taken][take_number]+"x‚ğˆø‚«‚Ü‚µ‚½B");
+				System.out.println("player"+(take+1)+"ãŒplayer1ã®ã‚«ãƒ¼ãƒ‰ã‹ã‚‰ã€"+player_card[taken][take_number]+"ã€ã‚’å¼•ãã¾ã—ãŸã€‚");
 			}
 			
-			//èD‚ªˆê’v‚µ‚½‚©‚ğŠm”F‚·‚é
+			//æ‰‹æœ­ãŒä¸€è‡´ã—ãŸã‹ã‚’ç¢ºèªã™ã‚‹
 			if(mae>ato) {
-				System.out.println("-----------------------ƒJ[ƒh‚ªˆê’v-----------------------\n");
+				System.out.println("-----------------------ã‚«ãƒ¼ãƒ‰ãŒä¸€è‡´-----------------------\n");
 			}else {
-				System.out.println("-----------------------ƒJ[ƒh•sˆê’v-----------------------\n");
+				System.out.println("-----------------------ã‚«ãƒ¼ãƒ‰ä¸ä¸€è‡´-----------------------\n");
 			}
 			if(take == 0) {
 				on_display.method(player_card,player_nokori_card,take);
 			}
-			//take‚ª”²‚¯‚½‚©”»’è‚·‚é
+			//takeãŒæŠœã‘ãŸã‹åˆ¤å®šã™ã‚‹
 			ranking ranking = r.method(player_nokori_card, take, syoji_player, array_rank, rank);
 			syoji_player = ranking.syoji_player;
 			array_rank = ranking.array_rank;
 			rank = ranking.rank;
 						
-			//taken‚ÌƒJ[ƒh‚©‚ç‘I‚Î‚ê‚½take_number‚ğíœ‚·‚é
+			//takenã®ã‚«ãƒ¼ãƒ‰ã‹ã‚‰é¸ã°ã‚ŒãŸtake_numberã‚’å‰Šé™¤ã™ã‚‹
 			player_card[taken][take_number] = "XXXno";
 			seiri = s.method(totalplayer, player_card, player_nokori_card, taken);
 			player_card = seiri.player_c;
 			player_nokori_card = seiri.player_n_c;
 			
-			//taken‚ª”²‚¯‚½‚©”»’è‚·‚é
+			//takenãŒæŠœã‘ãŸã‹åˆ¤å®šã™ã‚‹
 			ranking = r.method(player_nokori_card, taken, syoji_player, array_rank, rank);
 			syoji_player = ranking.syoji_player;
 			array_rank = ranking.array_rank;
 			rank = ranking.rank;
 			
-			//Ÿ‚Ìtake‚Ætaken‚ğŒˆ‚ß‚é
+			//æ¬¡ã®takeã¨takenã‚’æ±ºã‚ã‚‹
 			take = taken;
 			take_taken take_teken = t.method(syoji_player, take);
 			take = take_teken.take;
 			taken = take_teken.taken;
 			
-			System.out.println("c‚èƒvƒŒƒCl”s"+(totalplayer-rank)+"lt");
+			System.out.println("æ®‹ã‚Šãƒ—ãƒ¬ã‚¤äººæ•°ã€Š"+(totalplayer-rank)+"äººã€‹");
 			count++;
 		}while(rank != (totalplayer-1));
 		
-		for(int i = 0;i<totalplayer;i++) {			//ƒoƒo‚ğarray_rank‚É“ü‚ê‚é
+		for(int i = 0;i<totalplayer;i++) {			//ãƒãƒã‚’array_rankã«å…¥ã‚Œã‚‹
 			if(syoji_player[i] != -1) {
 				array_rank[rank] = i;
 			}
@@ -397,7 +397,7 @@ class game{
 	}
 }
 /*****************************************************************************
- * ”š‚ğ“ü—Í‚·‚éƒvƒƒOƒ‰ƒ€
+ * æ•°å­—ã‚’å…¥åŠ›ã™ã‚‹ãƒ—ãƒ­ã‚°ãƒ©ãƒ 
  *****************************************************************************/
 class Enter_number{
 	public static int main (String print) throws IOException {
@@ -414,7 +414,7 @@ class Enter_number{
 		    	number = Integer.parseInt(numberS);
 		    	error = null;
 		    }catch(NumberFormatException e) {
-		    	System.out.println("³‚µ‚¢’l‚ğ“ü—Í‚Å‚«‚Ä‚¢‚Ü‚¹‚ñB");
+		    	System.out.println("æ­£ã—ã„å€¤ã‚’å…¥åŠ›ã§ãã¦ã„ã¾ã›ã‚“ã€‚");
 		    	error = "redo";
 		    }
 		}while(error == "redo");
